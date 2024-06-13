@@ -96,8 +96,3 @@ jobs:
 
       - name: Set up Docker Compose
         run: docker-compose -f docker-compose.yaml up -d
-        
-      - name: Wait for services to be healthy
-        run: |
-           docker-compose run --rm db bash -c 'while ! pg_isready -U postgres; do sleep 1; done'
-           docker-compose run --rm backend bash -c 'while ! curl -f http://backend:9091/api/countries; do sleep 1; done'
