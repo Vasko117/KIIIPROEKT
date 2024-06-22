@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: postgres-secret
+  namespace: accomidations
 type: Opaque
 data:
   POSTGRES_USER: cG9zdGdyZXM=
@@ -12,6 +13,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: postgres-config
+  namespace: accomidations
 data:
   POSTGRES_DB: emt
 
@@ -20,6 +22,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
+  namespace: accomidations
 spec:
   replicas: 1
   selector:
@@ -56,6 +59,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  namespace: accomidations
 spec:
   replicas: 1
   selector:
