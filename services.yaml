@@ -18,7 +18,6 @@ metadata:
 spec:
   ports:
     - port: 9091
-      targetPort: 9091
   selector:
     app: backend
 
@@ -29,11 +28,10 @@ metadata:
   name: frontend
   namespace: accomidations
 spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080
   selector:
     app: frontend
-  ports:
-    - protocol: TCP
-      port: 80 # Service port
-      targetPort: 80 # Container port where your frontend is listening
-      nodePort: 30080 # NodePort
-  type: NodePort
