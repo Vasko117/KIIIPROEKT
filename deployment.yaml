@@ -73,5 +73,8 @@ spec:
       containers:
         - name: frontend
           image: vasko117/frontend:latest
+          env:
+            - name: REACT_APP_BACKEND_URL
+              value: 'http://backend:9091/api'
           ports:
             - containerPort: 80
