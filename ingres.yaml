@@ -5,10 +5,11 @@ metadata:
   namespace: accomidations
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   ingressClassName: nginx
   rules:
-    - host: accomidations.com
+    - host: front.accomidations.com
       http:
         paths:
           - path: /accomidations
@@ -26,15 +27,16 @@ metadata:
   name: backend-ingress
   namespace: accomidations
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /api/$1
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   ingressClassName: nginx
   rules:
-    - host: api.accomidations.com
+    - host: back.accomidations.com
       http:
         paths:
-          - path: /(.*)
-            pathType: ImplementationSpecific
+          - path: /api/(.*)
+            pathType: Prefix
             backend:
               service:
                 name: backend

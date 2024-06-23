@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost","http://localhost:30080","http://localhost:3000"})
+@CrossOrigin(origins = {"http://localhost","http://localhost:30080","http://localhost:3000","http://front.accomidations.com:30080"})
 @RequestMapping("/api/places")
 public class PlacesController {
     private final PlacesService service;
