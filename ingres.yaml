@@ -12,7 +12,7 @@ spec:
     - host: front.accomidations.com
       http:
         paths:
-          - path: /accomidations
+          - path: /
             pathType: Prefix
             backend:
               service:
