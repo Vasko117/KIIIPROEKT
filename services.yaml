@@ -16,8 +16,11 @@ metadata:
   name: backend
   namespace: accomidations
 spec:
+  type: NodePort
   ports:
-    - port: 9091 # Port on the service
+    - port: 9091
+      targetPort: 9091
+      nodePort: 30091
   selector:
     app: backend
 
@@ -32,6 +35,6 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30080
+      nodePort: 30080 # Choose a node port in the range 30000-32767
   selector:
     app: frontend

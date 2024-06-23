@@ -12,6 +12,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=vasil
     depends_on:
       - db
+    container_name: backend
 
   frontend:
     build:
@@ -20,8 +21,6 @@ services:
       - "80:80"
     depends_on:
       - backend
-    environment:
-      - REACT_APP_BACKEND_URL=http://backend:9091/api
     
   db:
     image: postgres:latest

@@ -11,7 +11,7 @@ spec:
     - host: accomidations.com
       http:
         paths:
-          - path: /
+          - path: /accomidations
             pathType: Prefix
             backend:
               service:
@@ -30,7 +30,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: api.backend.com
+    - host: api.accomidations.com
       http:
         paths:
           - path: /(.*)
