@@ -38,7 +38,7 @@ function Places(props) {
                     <div className="col mb-3">
                         <div className="row">
                             <div className="col-sm-12 col-md-12">
-                                <Link className={"btn btn-block btn-dark"} to={"/places/add-place"}>Add new place</Link>
+                                <Link className={"btn btn-block btn-dark"} to={"/places/add-place"}>Add new placeeeee</Link>
                             </div>
                         </div>
                     </div>
